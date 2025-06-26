@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Coffee Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .email-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        
+        /* Philosophy Section */
+        .philosophy {
+            background-color: #F8F6F2;
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .philosophy-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .philosophy-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 24px;
+            color: #333;
+        }
+        
+        .philosophy-text p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: #C7A254;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .highlight:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .philosophy-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .philosophy-image svg {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+            transition: transform 0.5s ease;
+        }
+        
+        .philosophy-image svg:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: #fff;
+            padding: 80px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            font-size: 18px;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .hero-image {
+            margin: 30px auto;
+            position: relative;
+            max-width: 500px;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+        }
+        
+        .reflection {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%) scaleY(-0.2);
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #C7A254;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(199, 162, 84, 0.3);
+            background-color: #d4af61;
+        }
+        
+        /* Comparison Table */
+        .comparison {
+            padding: 80px 40px;
+            background-color: #fff;
+        }
+        
+        .comparison h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        thead th {
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
+            padding: 20px 16px;
+            background-color: #f9f9f9;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #FAFAFA;
+        }
+        
+        tbody td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .check {
+            color: #C7A254;
+        }
+        
+        /* Calculator Section */
+        .calculator {
+            background-color: #1B1B1B;
+            color: #fff;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        
+        .calculator h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .calculator p {
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .calculator-widget {
+            background-color: #252525;
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .calculator-widget:hover {
+            transform: translateY(-5px);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #333;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .form-group select:hover {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #333;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+        
+        .form-group input:hover, .form-group input:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+            outline: none;
+        }
+        
+        .cups-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .cup-btn {
+            flex: 1;
+            background-color: #333;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 10px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .cup-btn:hover {
+            background-color: #444;
+        }
+        
+        .cup-btn.active {
+            background-color: #C7A254;
+            border-color: #C7A254;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .result-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: left;
+        }
+        
+        .result-value {
+            font-size: 16px;
+            font-weight: 500;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        .savings {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(199, 162, 84, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(199, 162, 84, 0.3);
+        }
+        
+        .savings-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 5px;
+        }
+        
+        .savings-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: #C7A254;
+            transition: all 0.3s ease;
+        }
+        
+        /* Featured Essentials */
+        .essentials {
+            background-color: #F8F6F2;
+            padding: 80px 40px;
+        }
+        
+        .essentials h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .carousel::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        
+        .product-card {
+            scroll-snap-align: start;
+            min-width: 220px;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .product-image svg {
+            max-height: 100%;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+        }
+        
+        .product-title {
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .product-desc {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+        }
+        
+        /* Trust Section */
+        .trust {
+            padding: 80px 40px;
+            background-color: #fff;
+        }
+        
+        .trust h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .trust-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .trust-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .trust-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+            color: #C7A254;
+        }
+        
+        .trust-title {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .trust-desc {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        /* Social Proof Section */
+        .social-proof {
+            background-color: #f8f8f8;
+            padding: 80px 40px;
+        }
+        
+        .social-proof h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .reviews-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+        
+        .reviews-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .review-card {
+            scroll-snap-align: start;
+            min-width: 280px;
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .review-source {
+            margin-left: auto;
+            font-size: 20px;
+            color: #777;
+        }
+        
+        .review-source.google { color: #4285F4; }
+        .review-source.facebook { color: #1877F2; }
+        .review-source.instagram { color: #C13584; }
+        .review-source.email { color: #D44638; }
+        .review-source.whatsapp { color: #25D366; }
+        
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 20px;
+            color: #777;
+        }
+        
+        .reviewer-info h4 {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        
+        .reviewer-info .stars {
+            color: #FFD700;
+            font-size: 14px;
+        }
+        
+        .review-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        /* Closing Section */
+        .closing {
+            background-color: #0F0F0F;
+            color: #fff;
+            padding: 80px 40px;
+            text-align: center;
+        }
+        
+        .closing h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .closing p {
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .transparent-button {
+            display: inline-block;
+            background-color: transparent;
+            color: #C7A254;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            padding: 16px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: 1px solid #C7A254;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+        
+        .transparent-button:hover {
+            background-color: #C7A254;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(199, 162, 84, 0.2);
+        }
+        
+        .support {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .support a {
+            color: #C7A254;
+            text-decoration: none;
+            margin-left: 5px;
+            transition: color 0.2s ease;
+        }
+        
+        .support a:hover {
+            color: #d4af61;
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(to bottom, #0F0F0F, #000);
+            color: rgba(255, 255, 255, 0.5);
+            padding: 40px;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-pulse {
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .philosophy {
+                flex-direction: column;
+                padding: 60px 30px;
+            }
+            
+            .philosophy-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .comparison, .calculator, .essentials, .trust, .social-proof, .closing {
+                padding: 60px 20px;
+            }
+            
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .cups-selector {
+                flex-wrap: wrap;
+            }
+            
+            .cup-btn {
+                flex: 0 0 calc(50% - 5px);
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Philosophy Section -->
+        <section class="philosophy">
+            <div class="philosophy-text">
+                <h2>Our Philosophy</h2>
+                <p>We believe coffee is more than caffeine. It's a moment of <span class="highlight">focus</span>, a pause, a <span class="highlight">pleasure</span>. That's why we curated a range of machines that do more than just brew — they <span class="highlight">elevate</span>.</p>
+            </div>
+            <div class="philosophy-image">
+                <!-- Coffee Beans SVG -->
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="80" cy="100" rx="30" ry="50" transform="rotate(-30 80 100)" fill="#5D4037" />
+                    <ellipse cx="120" cy="100" rx="30" ry="50" transform="rotate(30 120 100)" fill="#3E2723" />
+                    <ellipse cx="100" cy="100" rx="25" ry="45" fill="#4E342E" />
+                    <path d="M85,80 Q100,70 115,80" stroke="#6D4C41" stroke-width="2" fill="none" />
+                    <path d="M85,90 Q100,100 115,90" stroke="#6D4C41" stroke-width="1.5" fill="none" />
+                    <path d="M85,100 Q100,110 115,100" stroke="#6D4C41" stroke-width="1" fill="none" />
+                    <ellipse cx="90" cy="85" rx="5" ry="3" fill="#3E2723" />
+                    <ellipse cx="110" cy="85" rx="5" ry="3" fill="#3E2723" />
+                </svg>
+            </div>
+        </section>
+                        
+                        <!-- Main Body -->
+                        <rect x="250" y="150" width="300" height="200" rx="10" fill="#444" />
+                        <rect x="260" y="160" width="280" height="180" rx="8" fill="#333" />
+                        
+                        <!-- Front Panel -->
+                        <rect x="270" y="170" width="260" height="160" rx="5" fill="#222" />
+                        
+                        <!-- Display -->
+                        <rect x="290" y="190" width="220" height="80" rx="3" fill="#111" />
+                        <rect x="300" y="200" width="200" height="60" rx="2" fill="#0a0a0a" />
+                        <rect x="310" y="210" width="180" height="40" rx="2" fill="#000" />
+                        <rect x="320" y="220" width="160" height="20" rx="1" fill="#333" />
+                        
+                        <!-- Buttons -->
+                        <circle cx="320" cy="300" r="15" fill="#111" />
+                        <circle cx="320" cy="300" r="12" fill="#222" />
+                        
+                        <circle cx="370" cy="300" r="15" fill="#111" />
+                        <circle cx="370" cy="300" r="12" fill="#222" />
+                        
+                        <circle cx="420" cy="300" r="15" fill="#111" />
+                        <circle cx="420" cy="300" r="12" fill="#222" />
+                        
+                        <circle cx="470" cy="300" r="15" fill="#111" />
+                        <circle cx="470" cy="300" r="12" fill="#222" />
+                        
+                        <!-- Coffee Spout -->
+                        <rect x="350" y="130" width="100" height="20" rx="5" fill="#333" />
+                        <rect x="370" y="110" width="60" height="20" rx="5" fill="#222" />
+                        <rect x="390" y="90" width="20" height="20" rx="3" fill="#111" />
+                        
+                        <!-- Side Panel -->
+                        <rect x="550" y="170" width="30" height="160" rx="3" fill="#333" />
+                        <rect x="555" y="180" width="20" height="140" rx="2" fill="#222" />
+                        
+                        <!-- Water Tank -->
+                        <rect x="200" y="170" width="50" height="160" rx="5" fill="#111" opacity="0.7" />
+                        <rect x="205" y="175" width="40" height="150" rx="4" fill="#29B6F6" opacity="0.2" />
+                        
+                        <!-- Highlights -->
+                        <rect x="270" y="170" width="260" height="5" rx="2" fill="#555" />
+                        <rect x="290" y="190" width="220" height="3" rx="1" fill="#666" />
+                        <circle cx="320" cy="300" r="2" fill="#C7A254" />
+                        <circle cx="370" cy="300" r="2" fill="#C7A254" />
+                        <circle cx="420" cy="300" r="2" fill="#C7A254" />
+                        <circle cx="470" cy="300" r="2" fill="#C7A254" />
+                    </svg>
+                </div>
+                
+                <a href="https://upscalecoffee.com" class="cta-button">Explore the Machine</a>
+            </div>
+        </section>
+        
+        <!-- Comparison Table -->
+        <section class="comparison">
+            <h2>Precision Engineering</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Z10</th>
+                            <th>J8 Twin</th>
+                            <th>GIGA 10</th>
+                            <th>X8</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cold Brew Process</td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Dual Bean Chambers</td>
+                            <td></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Automatic Milk Frother</td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>Touchscreen Display</td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td><span class="check"><i class="fas fa-check"></i></span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Programmable Profiles</td>
+                            <td>10</td>
+                            <td>8</td>
+                            <td>12</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>$3,999</td>
+                            <td>$3,499</td>
+                            <td>$4,999</td>
+                            <td>$8,995</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Calculator Section -->
+        <section class="calculator">
+            <h2>Cost of Café vs. Owning Your Own Machine</h2>
+            <p>See how much you can save by bringing the café experience home.</p>
+            
+            <div class="calculator-widget animate-pulse">
+                <div class="form-group">
+                    <label for="cafe-price">Average café coffee price ($)</label>
+                    <input type="number" id="cafe-price" value="4" min="1" step="0.5">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cups">Cups per day</label>
+                    <div class="cups-selector">
+                        <button class="cup-btn" data-cups="2">2</button>
+                        <button class="cup-btn active" data-cups="4">4</button>
+                        <button class="cup-btn" data-cups="6">6</button>
+                        <button class="cup-btn" data-cups="8">8</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="machine">Choose machine</label>
+                    <select id="machine">
+                        <option value="z10">Z10 ($3,999)</option>
+                        <option value="j8">J8 Twin ($3,499)</option>
+                        <option value="giga">GIGA 10 ($4,999)</option>
+                        <option value="x8">X8 ($8,995)</option>
+                    </select>
+                </div>
+                
+                <div class="result">
+                    <div class="result-row">
+                        <div class="result-label">Annual café cost:</div>
+                        <div class="result-value" id="cafe-cost">$5,840</div>
+                    </div>
+                    
+                    <div class="result-row">
+                        <div class="result-label">Annual home brewing cost:</div>
+                        <div class="result-value" id="home-cost">$1,460</div>
+                    </div>
+                    
+                    <div class="savings">
+                        <div class="savings-label">Your annual savings:</div>
+                        <div class="savings-value" id="savings">$4,380</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trust Section -->
+        <section class="trust">
+            <h2>Our Commitment</h2>
+            
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-flag"></i></div>
+                    <div class="trust-title">Swiss Engineered</div>
+                    <div class="trust-desc">Precision craftsmanship in every detail</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="trust-title">2-Year Warranty</div>
+                    <div class="trust-desc">Complete peace of mind</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-undo"></i></div>
+                    <div class="trust-title">Easy Returns</div>
+                    <div class="trust-desc">30-day satisfaction guarantee</div>
+                </div>
+                
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="fas fa-credit-card"></i></div>
+                    <div class="trust-title">0% Financing</div>
+                    <div class="trust-desc">Flexible payment options</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Social Proof Section -->
+        <section class="social-proof">
+            <h2>What Our Customers Say</h2>
+            
+            <div class="reviews-container" id="reviews-container">
+                <!-- Reviews will be dynamically inserted here -->
+            </div>
+        </section>
+        
+        <!-- Closing Section -->
+        <section class="closing">
+            <h2>Still Deciding?</h2>
+            <p>Let us help you choose the machine that fits your life.</p>
+            
+            <a href="https://upscalecoffee.com" class="transparent-button">Find My Fit</a>
+            
+            <div class="support">
+                Questions? Our coffee concierges are one click away.
+                <a href="https://upscalecoffee.com">Contact Us</a>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="#">Unsubscribe</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">View in Browser</a>
+            </div>
+            <div>© 2023 Luxury Coffee Co. All rights reserved.</div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculator functionality
+            const cafePrice = document.getElementById('cafe-price');
+            const machineSelect = document.getElementById('machine');
+            const cafeCost = document.getElementById('cafe-cost');
+            const homeCost = document.getElementById('home-cost');
+            const savings = document.getElementById('savings');
+            const cupButtons = document.querySelectorAll('.cup-btn');
+            let currentCups = 4; // Default value
+            
+            function calculateCosts() {
+                const cups = currentCups;
+                const cafePriceValue = parseFloat(cafePrice.value);
+                const machineType = machineSelect.value;
+                
+                let machineCost = 3999; // Default Z10
+                
+                switch(machineType) {
+                    case 'z10':
+                        machineCost = 3999;
+                        break;
+                    case 'j8':
+                        machineCost = 3499;
+                        break;
+                    case 'giga':
+                        machineCost = 4999;
+                        break;
+                    case 'x8':
+                        machineCost = 8995;
+                        break;
+                }
+                
+                // Calculate annual costs
+                const daysInYear = 365;
+                const totalCafeCost = cafePriceValue * cups * daysInYear;
+                
+                // Home brewing cost: machine cost (amortized over 3 years) + $0.50 per cup for beans/water/milk
+                const homeCostPerYear = (machineCost / 3) + (0.50 * cups * daysInYear);
+                
+                // Calculate savings
+                const annualSavings = totalCafeCost - homeCostPerYear;
+                
+                // Animate the result changes
+                animateValue(cafeCost, parseFloat(cafeCost.textContent.replace('$', '').replace(',', '')), totalCafeCost, 500);
+                animateValue(homeCost, parseFloat(homeCost.textContent.replace('$', '').replace(',', '')), homeCostPerYear, 500);
+                animateValue(savings, parseFloat(savings.textContent.replace('$', '').replace(',', '')), annualSavings, 500);
+            }
+            
+            function animateValue(element, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = progress * (end - start) + start;
+                    element.textContent = '$' + formatNumber(value.toFixed(0));
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            function formatNumber(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            // Cup button functionality
+            cupButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    cupButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Update current cups value
+                    currentCups = parseInt(this.getAttribute('data-cups'));
+                    
+                    // Recalculate costs
+                    calculateCosts();
+                });
+            });
+            
+            cafePrice.addEventListener('input', calculateCosts);
+            machineSelect.addEventListener('change', calculateCosts);
+            
+            // Initial calculation
+            calculateCosts();
+            
+            // Generate reviews dynamically
+            const reviewsContainer = document.getElementById('reviews-container');
+            
+            const reviews = [
+                {
+                    name: "Michael T.",
+                    avatar: "M",
+                    stars: 5,
+                    text: "The Z10 has completely transformed my morning routine. The cold brew feature is exceptional, and the build quality is unmatched.",
+                    source: "google"
+                },
+                {
+                    name: "Sarah L.",
+                    avatar: "S",
+                    stars: 5,
+                    text: "Worth every penny! I've had mine for 6 months and it's still like new. The customer service team was incredibly helpful with setup.",
+                    source: "facebook"
+                },
+                {
+                    name: "David K.",
+                    avatar: "D",
+                    stars: 4,
+                    text: "The GIGA 10 is a statement piece in our kitchen. Guests are always impressed by the quality of coffee it produces.",
+                    source: "instagram"
+                },
+                {
+                    name: "Jennifer R.",
+                    avatar: "J",
+                    stars: 5,
+                    text: "I was hesitant about the price, but after calculating what I was spending at cafés, it made perfect sense. Best investment!",
+                    source: "email"
+                },
+                {
+                    name: "Robert P.",
+                    avatar: "R",
+                    stars: 5,
+                    text: "The J8 Twin lets me keep decaf and regular beans loaded simultaneously. Perfect for entertaining guests with different preferences.",
+                    source: "whatsapp"
+                }
+            ];
+            
+            // Create and append review cards with staggered animation
+            reviews.forEach((review, index) => {
+                setTimeout(() => {
+                    const reviewCard = document.createElement('div');
+                    reviewCard.className = 'review-card';
+                    reviewCard.style.animationDelay = `${index * 0.1}s`;
+                    
+                    let sourceIcon = '';
+                    switch(review.source) {
+                        case 'google':
+                            sourceIcon = '<i class="fab fa-google"></i>';
+                            break;
+                        case 'facebook':
+                            sourceIcon = '<i class="fab fa-facebook"></i>';
+                            break;
+                        case 'instagram':
+                            sourceIcon = '<i class="fab fa-instagram"></i>';
+                            break;
+                        case 'email':
+                            sourceIcon = '<i class="fas fa-envelope"></i>';
+                            break;
+                        case 'whatsapp':
+                            sourceIcon = '<i class="fab fa-whatsapp"></i>';
+                            break;
+                    }
+                    
+                    reviewCard.innerHTML = `
+                        <div class="review-header">
+                            <div class="reviewer-avatar">${review.avatar}</div>
+                            <div class="reviewer-info">
+                                <h4>${review.name}</h4>
+                                <div class="stars">
+                                    ${'<i class="fas fa-star"></i>'.repeat(review.stars)}
+                                    ${'<i class="far fa-star"></i>'.repeat(5 - review.stars)}
+                                </div>
+                            </div>
+                            <div class="review-source ${review.source}">${sourceIcon}</div>
+                        </div>
+                        <div class="review-text">${review.text}</div>
+                    `;
+                    
+                    reviewsContainer.appendChild(reviewCard);
+                }, index * 100);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'956028ee52a51735',t:'MTc1MDk3NzEzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
